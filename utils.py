@@ -33,7 +33,7 @@ async def get_shortlink(link, x):
         N = 6
         res = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k = N))
-        links = f'[https://droplink.co/{res}](https://Pdiskshortearn.xyz/st?api={PDISKSHORTNEARN_API}&url={link})'
+        links = f'[https://Pdiskshortnearn.xy/{res}](https://Pdiskshortearn.xyz/st?api={PDISKSHORTNEARN_API}&url={link})'
         return links
 
 
