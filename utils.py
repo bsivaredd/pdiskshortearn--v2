@@ -1,11 +1,11 @@
 from ast import comprehension
 import random
 import string
-from config import MDISK_API, DROPLINK_API, EXCLUDE_DOMAIN, INCLUDE_DOMAIN, USERNAME, REMOVE_EMOJI
+from config import MDISK_API, PDISKSHORTNEARN_API, EXCLUDE_DOMAIN, INCLUDE_DOMAIN, USERNAME, REMOVE_EMOJI
 import re
 import aiohttp
 import requests
-####################  droplink  ####################
+####################  Pdiskshortearn  ####################
 
 
 async def get_shortlink(link, x):
@@ -13,8 +13,8 @@ async def get_shortlink(link, x):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://droplink/api'
-    params = {'api': DROPLINK_API,
+    url = f'https://Pdiskshortearn/api'
+    params = {'api': PDISKSHORTNEARN_API,
               'url': link,
               'alias': x
               }
@@ -33,7 +33,7 @@ async def get_shortlink(link, x):
         N = 6
         res = ''.join(random.choices(string.ascii_uppercase +
                              string.digits, k = N))
-        links = f'[https://droplink.co/{res}](https://droplink.co/st?api={DROPLINK_API}&url={link})'
+        links = f'[https://droplink.co/{res}](https://Pdiskshortearn.xyz/st?api={PDISKSHORTNEARN_API}&url={link})'
         return links
 
 
@@ -98,7 +98,7 @@ async def replace_mdisk_link(text):
 
 ####################  Mdisk and Droplink  ####################
 
-async def mdisk_droplink_convertor(text):
+async def mdisk_pdiskshortnearn_convertor(text):
     links = await replace_mdisk_link(text)
     links = await replace_link(links, x="")
     links = await replace_username(links)
