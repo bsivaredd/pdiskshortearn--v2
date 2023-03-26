@@ -25,7 +25,7 @@
       "description": "Select your preferred METHOD between droplink or mdisk. Enter exactly droplink or mdisk or mdlink (for both mdisk and droplink) in lowercase",
       "value": ""
     },
-    "DROPLINK_API": {
+    "PDISKSHORTNEARN": {
       "description": "Enter your DROPLINK API KEY only if METHOD is selected to droplink. Get your API from https://droplink.co/member/tools/api",
       "value": "0"
     },
