@@ -50,7 +50,7 @@ async def private_link_handler(bot, message):
                     link = await replace_mdisk_link(text)
                     await message.reply_document(fileid, caption=link)
 
-            elif METHOD == "droplink":
+            elif METHOD == "Pdiskshortnearn":
                 # url shortener in private chat
 
                 if message.reply_markup:  # reply markup - button post
@@ -98,7 +98,7 @@ async def private_link_handler(bot, message):
                     alias = ""
                     link = await replace_link(text, alias)
                     if link == text:
-                        print("The given link is either excluded domain link or a droplink link")
+                        print("The given link is either excluded domain link or a Pdiskshortnearn link")
                     else:
                         await message.reply_photo(fileid, caption=link)
 
@@ -108,7 +108,7 @@ async def private_link_handler(bot, message):
                     alias = ""
                     link = await replace_link(text, alias)
                     if link == text:
-                        print("The given link is either excluded domain link or a droplink link")
+                        print("The given link is either excluded domain link or a pdiskshortnearn link")
                     else:
                         await message.reply_document(fileid, caption=link)
 
@@ -124,16 +124,17 @@ async def private_link_handler(bot, message):
                         for j in markup:
                             text = j["text"]
                             url = j["url"]
-                            url = await mdisk_droplink_convertor(url)
+                            url = await mdisk_pdiskshortnearn_convertor(url)
                             button = InlineKeyboardButton(text, url=url)
                             buttons.append(button)
                         buttsons.append(buttons)
 
                     if message.text:
-                        txt = await mdisk_droplink_convertor(txt)
+                        txt = await mdisk_pdiskshortnearn_convertor(txt)
                         await message.reply(text=txt, reply_markup=InlineKeyboardMarkup(buttsons))
                     elif message.caption:
-                        txt = await mdisk_droplink_convertor(message.caption)
+                        txt = await mdisk_droplink
+Use_convertor(message.caption)
                         if message.photo:
                             await message.reply_photo(photo=message.photo.file_id, caption=txt,
                                                       reply_markup=InlineKeyboardMarkup(buttsons))
